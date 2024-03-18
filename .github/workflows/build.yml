@@ -41,7 +41,7 @@ jobs:
               .forEach(({ id }) => { github.rest.actions.deleteArtifact({ owner, repo, artifact_id: id, }) })
 
       - name: Upload latest artifact
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' 
         uses: actions/upload-artifact@v3
         with:
           name: main-unsigned.ipa
